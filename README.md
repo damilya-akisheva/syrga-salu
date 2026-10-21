@@ -34,7 +34,7 @@ Build locally (reads `APPS_SCRIPT_URL` from the environment, else from `.env`):
 ./scripts/build-site.sh   # → dist/site/
 ```
 
-Deploy: pushing to `main` with changes in `site/` runs `.github/workflows/deploy-site.yml`, which builds
+Deploy: pushing to `master` with changes in `site/` runs `.github/workflows/deploy-site.yml`, which builds
 with the `APPS_SCRIPT_URL` secret and publishes `dist/site/` to GitHub Pages
 (Settings → Pages → Source: **GitHub Actions**). It can also be started manually from the Actions tab.
 
