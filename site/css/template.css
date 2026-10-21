@@ -1,0 +1,129 @@
+0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+        @keyframes qe2-petal {
+          0%   { transform: translateY(0)    rotate(0deg)   translateX(0);   opacity: 0; }
+          8%   { opacity: 0.85; }
+          50%  { transform: translateY(50vh) rotate(120deg) translateX(18px); }
+          92%  { opacity: 0.4; }
+          100% { transform: translateY(105vh) rotate(260deg) translateX(-10px); opacity: 0; }
+        }
+        @keyframes qe2-float {
+          0%,100% { transform: translateY(0); }
+          50%     { transform: translateY(-8px); }
+        }
+        @keyframes qe2-shimmer {
+          0%   { background-position: -200% 0; }
+          100% { background-position:  200% 0; }
+        }
+        @keyframes qe2-heartbeat {
+          0%,100% { transform: scale(1); }
+          14%     { transform: scale(1.2); }
+          28%     { transform: scale(1); }
+          42%     { transform: scale(1.1); }
+        }
+        @keyframes qe2-fadein {
+          from { opacity: 0; transform: translateY(16px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .font-qe2       { font-family: 'Cormorant Garamond', 'Georgia', serif; }
+        .font-qe2-body  { font-family: 'Montserrat', sans-serif; }
+        .qe2-name {
+          background: linear-gradient(90deg, #8c1f35 20%, #c4883c 50%, #b03050 70%, #8c1f35 90%);
+          background-size: 200% 100%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: qe2-shimmer 4s ease-in-out infinite;
+        }
+        .qe2-card {
+          background: rgba(255,255,255,0.88);
+          border: 1px solid rgba(196,136,60,0.28);
+          backdrop-filter: blur(8px);
+        }
+        .qe2-fadein { animation: qe2-fadein 0.7s ease-out both; }
+        /* Hero name: same ruby as «Құрметті қонақтар!» (h2); light halo for contrast on photo */
+        .qe2-hero-name-solo {
+          color: #8c1f35;
+          -webkit-text-fill-color: #8c1f35;
+          background: none;
+          background-clip: border-box;
+          -webkit-background-clip: border-box;
+          text-shadow:
+            0 0 1px rgba(253, 245, 236, 0.95),
+            0 0 12px rgba(253, 245, 236, 0.75),
+            0 1px 2px rgba(255, 252, 248, 0.9);
+        }
+
+/* RSVP options */
+.rsvp-opt{border:1px solid rgba(140,31,53,.133);background:rgba(255,255,255,.5)}
+.rsvp-dot{border:2px solid rgba(140,31,53,.25);background:transparent}
+.rsvp-dot>span{display:none}
+.rsvp-opt:has(:checked){border-color:#8c1f35;background:rgba(140,31,53,.055)}
+.rsvp-opt :checked+.rsvp-dot{border-color:#8c1f35;background:#8c1f35}
+.rsvp-opt :checked+.rsvp-dot>span{display:block}
+
+/* CSS-only carousels */
+.car-view{overflow:hidden}
+.car-track{display:flex;transition:transform .45s ease}
+.car-slide{flex:0 0 100%;min-width:0}
+.car-arrow{display:none;cursor:pointer}
+.car-dot{cursor:pointer}
+
+.car [for^="gal-"][data-dot]{width: 6px; height: 6px; background: rgba(140, 31, 53, 0.19);}
+.car:has(#gal-0:checked) .car-track{transform:translateX(-0%)}
+.car:has(#gal-0:checked) [for^="gal-"][data-at="0"]{display:flex}
+.car:has(#gal-0:checked) [for="gal-0"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+.car:has(#gal-1:checked) .car-track{transform:translateX(-100%)}
+.car:has(#gal-1:checked) [for^="gal-"][data-at="1"]{display:flex}
+.car:has(#gal-1:checked) [for="gal-1"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+.car:has(#gal-2:checked) .car-track{transform:translateX(-200%)}
+.car:has(#gal-2:checked) [for^="gal-"][data-at="2"]{display:flex}
+.car:has(#gal-2:checked) [for="gal-2"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+
+/* wishes: slides/dots/arrows are built from the API in index.html, up to 10 */
+.car [for^="wish-"][data-dot]{width: 6px; height: 6px; background: rgba(140, 31, 53, 0.19);}
+.car:has(#wish-0:checked) .car-track{transform:translateX(-0%)}
+.car:has(#wish-0:checked) [for^="wish-"][data-at="0"]{display:flex}
+.car:has(#wish-0:checked) [for="wish-0"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+.car:has(#wish-1:checked) .car-track{transform:translateX(-100%)}
+.car:has(#wish-1:checked) [for^="wish-"][data-at="1"]{display:flex}
+.car:has(#wish-1:checked) [for="wish-1"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+.car:has(#wish-2:checked) .car-track{transform:translateX(-200%)}
+.car:has(#wish-2:checked) [for^="wish-"][data-at="2"]{display:flex}
+.car:has(#wish-2:checked) [for="wish-2"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+.car:has(#wish-3:checked) .car-track{transform:translateX(-300%)}
+.car:has(#wish-3:checked) [for^="wish-"][data-at="3"]{display:flex}
+.car:has(#wish-3:checked) [for="wish-3"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+.car:has(#wish-4:checked) .car-track{transform:translateX(-400%)}
+.car:has(#wish-4:checked) [for^="wish-"][data-at="4"]{display:flex}
+.car:has(#wish-4:checked) [for="wish-4"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+.car:has(#wish-5:checked) .car-track{transform:translateX(-500%)}
+.car:has(#wish-5:checked) [for^="wish-"][data-at="5"]{display:flex}
+.car:has(#wish-5:checked) [for="wish-5"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+.car:has(#wish-6:checked) .car-track{transform:translateX(-600%)}
+.car:has(#wish-6:checked) [for^="wish-"][data-at="6"]{display:flex}
+.car:has(#wish-6:checked) [for="wish-6"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+.car:has(#wish-7:checked) .car-track{transform:translateX(-700%)}
+.car:has(#wish-7:checked) [for^="wish-"][data-at="7"]{display:flex}
+.car:has(#wish-7:checked) [for="wish-7"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+.car:has(#wish-8:checked) .car-track{transform:translateX(-800%)}
+.car:has(#wish-8:checked) [for^="wish-"][data-at="8"]{display:flex}
+.car:has(#wish-8:checked) [for="wish-8"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+.car:has(#wish-9:checked) .car-track{transform:translateX(-900%)}
+.car:has(#wish-9:checked) [for^="wish-"][data-at="9"]{display:flex}
+.car:has(#wish-9:checked) [for="wish-9"][data-dot]{width: 20px; height: 6px; background: rgb(140, 31, 53);}
+
+/* ҚАЗ / РУС switch (CSS-only: radios #lang-kk / #lang-ru) */
+/* texts live in translations.css as --kk / --ru on each [data-i18n] key */
+[data-i18n]::before{content:var(--kk)}
+body:has(#lang-ru:checked) [data-i18n]::before{content:var(--ru)}
+/* placeholder overlay: visible while the field is empty */
+.ph{position:absolute;inset:0;border:1px solid transparent;pointer-events:none;color:rgba(61,21,32,.5);overflow:hidden;white-space:nowrap}
+:not(:placeholder-shown)+.ph{display:none}
+.lang-switch{position:fixed;top:12px;right:12px;z-index:60;display:flex;padding:3px;border-radius:999px;background:rgba(253,245,236,.92);border:1px solid rgba(196,136,60,.33);box-shadow:0 2px 8px rgba(61,21,32,.12);backdrop-filter:blur(6px)}
+.lang-switch label{cursor:pointer;padding:5px 11px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.08em;color:#8c1f35;transition:background .2s,color .2s}
+body:has(#lang-kk:checked) [for="lang-kk"],body:has(#lang-ru:checked) [for="lang-ru"]{background:#8c1f35;color:#fdf5ec}
+
+/* form result popup (<dialog id="form-popup">) */
+.popup{width:min(360px,calc(100% - 32px));border:0;margin:auto}
+.popup::backdrop{background:rgba(61,21,32,.45);backdrop-filter:blur(2px)}
