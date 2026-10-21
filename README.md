@@ -7,6 +7,7 @@ Apps Script Web App (`apps-script/Code.gs`).
 site/                       static HTML/CSS (+ a little inline JS for the countdown and forms)
 apps-script/Code.gs         Apps Script Web App: the "database" REST endpoint (deployed manually)
 scripts/build-site.sh       copies site/ → dist/site/ and injects APPS_SCRIPT_URL
+scripts/resize-image.swift  crops/compresses a photo to 1440×1800 JPEG for site/images/ (macOS)
 .github/workflows/          deploy-site.yml: build + deploy to GitHub Pages
 .env.example                template for local secrets (.env is gitignored)
 ```
@@ -36,6 +37,19 @@ Build locally (reads `APPS_SCRIPT_URL` from the environment, else from `.env`):
 Deploy: pushing to `main` with changes in `site/` runs `.github/workflows/deploy-site.yml`, which builds
 with the `APPS_SCRIPT_URL` secret and publishes `dist/site/` to GitHub Pages
 (Settings → Pages → Source: **GitHub Actions**). It can also be started manually from the Actions tab.
+
+### Images
+
+Photos in `site/images/` are 1440×1800 (4:5) JPEGs of ~200 KB. To prepare a new one from a camera original
+(macOS, uses the built-in `swift`):
+
+```sh
+swift scripts/resize-image.swift original.jpg site/images/qyz-uzatu.jpg            # center crop, quality 0.5
+swift scripts/resize-image.swift original.jpg site/images/qyz-uzatu.jpg 150 0.5    # trim 150 px from the top
+```
+
+The script applies the EXIF rotation, crops to 4:5, resizes and re-encodes; check the result and tweak the
+crop offset or quality if needed.
 
 ## Apps Script (manual deploy)
 
