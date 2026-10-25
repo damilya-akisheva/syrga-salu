@@ -63,6 +63,8 @@
 .rsvp-opt :checked+.rsvp-dot>span{display:block}
 
 /* CSS-only carousels */
+/* fixed so focusing a radio (via its label) never scrolls the page */
+.car input[type=radio]{position:fixed;top:0;left:0}
 .car-view{overflow:hidden}
 .car-track{display:flex;transition:transform .45s ease}
 .car-slide{flex:0 0 100%;min-width:0}
