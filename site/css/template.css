@@ -66,6 +66,7 @@
 .car-view{overflow:hidden}
 .car-track{display:flex;transition:transform .45s ease}
 .car-slide{flex:0 0 100%;min-width:0}
+.aspect-2\/3{aspect-ratio:2/3}
 .car-arrow{display:none;cursor:pointer}
 .car-dot{cursor:pointer}
 

@@ -44,8 +44,8 @@ Photos in `site/images/` are 1440×1800 (4:5) JPEGs of ~200 KB. To prepare a new
 (macOS, uses the built-in `swift`):
 
 ```sh
-swift scripts/resize-image.swift original.jpg site/images/qyz-uzatu.jpg            # center crop, quality 0.5
-swift scripts/resize-image.swift original.jpg site/images/qyz-uzatu.jpg 150 0.5    # trim 150 px from the top
+swift scripts/resize-image.swift original.jpg site/images/main-pic.jpg            # center crop, quality 0.5
+swift scripts/resize-image.swift original.jpg site/images/main-pic.jpg 150 0.5    # trim 150 px from the top
 ```
 
 The script applies the EXIF rotation, crops to 4:5, resizes and re-encodes; check the result and tweak the
